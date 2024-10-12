@@ -30,8 +30,16 @@ namespace Sample_StudentManagementApp
         }
 
         //CREATE    
-        public void Create(string studentName , string phNum , string className)
+        public void Create()
         {
+            Console.WriteLine("Enter Name => ");
+            string studentName = Console.ReadLine() ?? "Not Vaild";
+
+            Console.WriteLine("Enter Phone Number => ");
+            string phNum = Console.ReadLine() ?? "Not Vaild";
+
+            Console.WriteLine("Enter Class Name => ");
+            string className = Console.ReadLine() ?? "Not Vaild";
             // Creating a new instance of StudentDataModel
             StudentDataModel createStudents = new StudentDataModel
             {
@@ -54,8 +62,12 @@ namespace Sample_StudentManagementApp
         }
 
         //Edit
-        public void Edit(int studentId)
+        public void Edit()
         {
+
+            Console.WriteLine("Enter Id To Edit => ");
+            int studentId = Convert.ToInt32(Console.ReadLine());
+
             AppDbContext db = new AppDbContext();
             var student = db.Students.FirstOrDefault(student => student.StudentId == studentId);
             if (student is null)
@@ -73,31 +85,44 @@ namespace Sample_StudentManagementApp
         }
 
         //Update
-        public void Update(int studentId , string studentName , string phNum , string className)
+        public void Update()
         {
+            //Input For Updating
+            Console.WriteLine("Enter Id to Update");
+            int updateId = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter Name to Update => ");
+            string updateName = Console.ReadLine() ?? "Not Vaild";
+
+            Console.WriteLine("Enter Phone Number to Update => ");
+            string updatePhNum = Console.ReadLine() ?? "Not Vaild";
+
+            Console.WriteLine("Enter Class Name to Update => ");
+            string updateClassName = Console.ReadLine() ?? "Not Vaild";
+
             AppDbContext db = new AppDbContext();
             var student = db.Students
                             .AsNoTracking()
-                            .FirstOrDefault(student => student.StudentId == studentId);
+                            .FirstOrDefault(student => student.StudentId == updateId);
             if (student is null)
             {
                 Console.WriteLine("This Student does not extists!");
                 return;
             }
 
-            if (!string.IsNullOrEmpty(studentName) )
+            if (!string.IsNullOrEmpty(updateName) )
             {
-                student.StudentName = studentName;
+                student.StudentName = updateName;
             }
 
-            if (!string.IsNullOrEmpty(phNum))
+            if (!string.IsNullOrEmpty(updatePhNum))
             {
-                student.PhoneNum = phNum;
+                student.PhoneNum = updatePhNum;
             }
 
-            if (!string.IsNullOrEmpty(className))
+            if (!string.IsNullOrEmpty(updateClassName))
             {
-                student.ClassName = className;
+                student.ClassName = updateClassName;
             }
             db.Entry(student).State = EntityState.Modified;
             var result = db.SaveChanges();
@@ -106,10 +131,15 @@ namespace Sample_StudentManagementApp
         }
 
         // DELETE
-        public void Delete(int studentId)
+        public void Delete()
         {
+            //Input For Deletion
+            Console.WriteLine("Enter Id to Delete");
+            int deleteId = Convert.ToInt32(Console.ReadLine());
+
+
             AppDbContext db = new AppDbContext();
-            var student = db.Students.FirstOrDefault(student => student.StudentId == studentId);
+            var student = db.Students.FirstOrDefault(student => student.StudentId == deleteId);
             if (student is null)
             {
                 Console.WriteLine("This Student does not extists!");
