@@ -151,18 +151,6 @@ namespace Sample_StudentManagementApp
             Console.WriteLine(result == 1 ? "Deleting Successfully! " : "Deleting Fail! ");
         }
 
-        public void MenuList()
-        {
-            Console.WriteLine("----- MENU LISTS -----");
-            Console.WriteLine("1 . READ ALL STUDENTS ! ");
-            Console.WriteLine("2 . CREATE OR ADD NEW STUDENT ! ");
-            Console.WriteLine("3 . EDIT STUDENT ! ");
-            Console.WriteLine("4 . UPDATE STUDENT ! ");
-            Console.WriteLine("5 . DELETE STUDENT  ! ");
-            Console.WriteLine("6 . TO EXIST ! ");
-            Console.WriteLine("Choose Funtion (1 - 6) =>  ");
-        }
-
-
+       
     }
 }
