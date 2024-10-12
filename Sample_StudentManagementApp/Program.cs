@@ -1,57 +1,57 @@
 ﻿using Sample_StudentManagementApp;
 
-UsingEFCore usingEFCore = new UsingEFCore();
-usingEFCore.MenuList();
-int chooseMenu = Convert.ToInt32(Console.ReadLine());  
+//UsingEFCore usingEFCore = new UsingEFCore();
+//usingEFCore.MenuList();
+//int chooseMenu = Convert.ToInt32(Console.ReadLine());  
 
-while (chooseMenu != 6)
-{
-    switch (chooseMenu)
-    {
-        case 1:
+//while (chooseMenu != 6)
+//{
+//    switch (chooseMenu)
+//    {
+//        case 1:
 
-            usingEFCore.Read();
-            break;
+//            usingEFCore.Read();
+//            break;
 
-        case 2:
+//        case 2:
 
-            usingEFCore.Create();
+//            usingEFCore.Create();
 
-            break;
+//            break;
 
-        case 3:
+//        case 3:
 
-            usingEFCore.Edit();
+//            usingEFCore.Edit();
 
-            break;
+//            break;
 
-        case 4:
+//        case 4:
 
-            //Method Calling To Update
-            usingEFCore.Update();
+//            //Method Calling To Update
+//            usingEFCore.Update();
 
-            break;
+//            break;
 
-        case 5:
-            //Mehtod Calling for Deleting
-            usingEFCore.Delete();
-            break;
+//        case 5:
+//            //Mehtod Calling for Deleting
+//            usingEFCore.Delete();
+//            break;
 
-        case 6:
+//        case 6:
 
-            Console.WriteLine("Exiting the program.");
+//            Console.WriteLine("Exiting the program.");
 
-            break;
+//            break;
 
-        default:
+//        default:
 
-            Console.WriteLine("Invalid choice. Please choose again.");
-            break;
+//            Console.WriteLine("Invalid choice. Please choose again.");
+//            break;
 
-    }
-    usingEFCore.MenuList();
-     chooseMenu = Convert.ToInt32(Console.ReadLine());
-}
+//    }
+//    usingEFCore.MenuList();
+//     chooseMenu = Convert.ToInt32(Console.ReadLine());
+//}
 //usingEFCore.Read();
 //usingEFCore.Create("YE MINN HTET", "09 8976754", "ASP.NET");
 //usingEFCore.Edit(1);
@@ -59,3 +59,10 @@ while (chooseMenu != 6)
 //usingEFCore.Delete(9);
 
 //Console.ReadLine();
+
+UsingDapper Dapper = new UsingDapper();
+//Dapper.Read();
+//Dapper.Create();
+//Dapper.Edit();
+//Dapper.Update(4);
+Dapper.Delete();
