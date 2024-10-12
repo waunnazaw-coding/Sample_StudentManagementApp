@@ -10,8 +10,8 @@ namespace Sample_StudentManagementApp.Models
 {
     public class StudentDataModelDapper
     {
-        public int StuentId { get; set; }
-        public string StuentName { get; set; }
+        public int StudentId { get; set; }
+        public string StudentName { get; set; }
         public string PhoneNum { get; set; }
         public string ClassName { get; set; }
     }
