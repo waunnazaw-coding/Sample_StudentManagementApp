@@ -137,8 +137,14 @@ namespace Sample_StudentManagementApp
             }
         }
 
-        public void Update(int updateId)
+        public void Update()
         {
+            Console.WriteLine("Enter Id : ");
+            if( !int.TryParse(Console.ReadLine(),out int updateId))
+            {
+                Console.WriteLine("Input not invaild.");
+                return ;
+            }
             Console.Write("Enter Name : ");
             string updateStudentName = Console.ReadLine();
 
